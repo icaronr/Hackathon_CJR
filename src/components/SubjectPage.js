@@ -209,7 +209,7 @@ function mostraDias(turma) {
   );
 }
 
-const SubjectPage = () => {
+const SubjectPage = ({ navigation }) => {
   return (
     <View style={{ flex: 1 }}>
       <SubjectView
@@ -230,9 +230,7 @@ const SubjectPage = () => {
               <CardTitle>{subject.dept}</CardTitle>
               {subject.turmas.map((turma, inx) => {
                 return (
-                  <ClassRow
-                    key={inx}
-                    onPress={() => this.props.navigation.navigate('Details')}>
+                  <ClassRow key={inx}>
                     <ClassHeader style={{ flexDirection: 'row' }}>
                       <Text style={{ flex: 1 }}>{turma.title} </Text>
                       <Text style={{ flex: 3 }}>{turma.teacher}</Text>
